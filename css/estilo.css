@@ -1,10 +1,5 @@
-/*@import'Laboratorio/Abstracts/_variables';*/
-/*@import'Laboratorio/Base/_reset';*/
-/*@import'Laboratorio/Base/_typography';*/
-/*@import'Laboratorio/Componets/_article';*/
-/*@import'Laboratorio/Componets/_section';*/
 header {
-  position: sticky;
+  position: center;
   top: 0;
 }
 
