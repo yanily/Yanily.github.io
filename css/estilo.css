@@ -1,9 +1,13 @@
-header {
-  position: center;
-  top: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-nav {
+.header {
+  position: center;
+}
+
+.navigation {
   font-family: 'Playfair Display', serif;
   display: flex;
   height: 76px;
@@ -12,4 +16,23 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+ul.nav-items {
+  position: fixed;
+  left: 0;
+  top: 76px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: calc(100vh - 76px);
+  background-color: #eba2a3;
+  width: 100%;
+  padding-top: 55px;
+  transform: translateX(101%);
+  overflow: hidden;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  font-size: 1.25em;
 }
