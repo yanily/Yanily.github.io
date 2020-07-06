@@ -1,5 +1,4 @@
-$('.nav-burger').click(function(){
-      $(this).toggleClass("open");
-      $(".nav-items").toggleClass("open");
-      $(".logo").toggleClass("open");
+$('.burger').click(function(){
+    $('.burger__line').toggleClass("burger__line--open");
+    $(".nav__list").toggleClass("nav__list--open");
 });

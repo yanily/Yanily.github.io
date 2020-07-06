@@ -1,238 +1,130 @@
+/*_reset*/
 *, *:before, *:after {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-h2 {
-  font-size: 2.2em;
-  margin-bottom: 15px;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-}
-
-header {
+.header {
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-/*Navbar attributes*/
-.navigation {
-  font-family: 'Playfair Display', serif;
+/*_navegation*/
+.nav {
   display: flex;
   height: 76px;
-  background-color: #C48FE7;
-  padding: 10px 20px;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
-}
-
-/*Logo attributes*/
-.logo {
-  font-size: 12px;
-  font-family: "Source Sans Pro", sans-serif;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  padding: 0.5em 1em;
-  border: 2px solid #FFFFFF;
-  width: 150px;
-  text-transform: uppercase;
-  letter-spacing: .25em;
-  color: #fff;
-  font-weight: bold;
-  transition: all .3s linear;
-  -webkit-transition: all .3s linear;
-}
-
-.logo::before {
-  content: '';
-  position: absolute;
-  width: 90%;
-  height: 170%;
-  border: 2px solid #fff;
-  left: 5%;
-  top: -35%;
-}
-
-/*Burger menu container*/
-.nav-burger {
-  display: flex;
-  display: -webkit-flex;
-  justify-content: flex-end;
-  -webkit-justify-content: flex-end;
+  padding: 10px 20px;
   align-items: center;
-  -webkit-align-items: center;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  transition: all .3s linear;
-  -webkit-transition: all .3s linear;
+  justify-content: flex-end;
+  background-color: #B574DF;
 }
 
-/*Burger button and pseudo elements common attributes*/
-.burger-btn,
-.burger-btn::before,
-.burger-btn::after {
-  height: 2px;
-  background: #fff;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  transition: all .3s linear;
-  -webkit-transition: all .3s linear;
-}
-
-/*Burger button attributes*/
-.burger-btn {
-  width: 20px;
-  position: relative;
-}
-
-/*Burger button pseudo elements attributes*/
-.burger-btn::before,
-.burger-btn::after {
-  content: '';
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  right: 0;
-}
-
-/*Burger button before pseudo element attribute; makes it to be 8px over the burger button line*/
-.burger-btn::before {
-  transform: translateY(-8px);
-  -webkit-transform: translateY(-8px);
-}
-
-/*Burger button after pseudo element attribute; makes it to be 8px below the burger button line*/
-.burger-btn::after {
-  transform: translateY(8px);
-  -webkit-transform: translateY(8px);
-}
-
-/*Burger button when it's clicked. Makes button line disappear*/
-.nav-burger.open .burger-btn {
-  background: transparent;
-}
-
-/*Burger button before pseudo element when it's clicked. Makes button before line rotate*/
-.nav-burger.open .burger-btn::before {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-}
-
-/*Burger button before pseudo element when it's clicked. Makes button after line rotate*/
-.nav-burger.open .burger-btn::after {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-
-/*Ul where the menu items are gonna be*/
-ul.nav-items {
+.nav__list {
   position: fixed;
   left: 0;
   top: 76px;
+  background-color: #B574DF;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: calc(100vh - 76px);
-  background-color: #C48FE7;
   width: 100%;
   padding-top: 55px;
   transform: translateX(101%);
   overflow: hidden;
   list-style: none;
   font-weight: 500;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   font-size: 1.25em;
 }
 
-ul.nav-items li {
-  padding: 15px 0;
-}
-
-ul.nav-items li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-ul.nav-items li a.active {
-  color: #DE3163;
-  font-weight: bold;
-}
-
-#nav-menu.open {
+.nav__list--open {
   transform: translateX(0%);
 }
 
-#logo.open {
-  transform: translateX(-115%);
+.nav__item {
+  padding: 15px 0;
 }
 
-span.underline {
+.nav__link {
   position: relative;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 800;
+  color: #F8F5F9;
+  overflow: hidden;
+  background: linear-gradient(to right, #E900C6, #E900C6 50%, #F8F5F9 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
 }
 
-span.underline::before {
+.nav__link:hover {
+  background-position: 0 100%;
+}
+
+.burger {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all .3s linear;
+}
+
+.burger__line {
+  width: 20px;
+  position: relative;
+  transition: all .1s linear;
+}
+
+.burger__line, .burger__line::before, .burger__line::after {
+  height: 2px;
+  background: #F8F5F9;
+  border-radius: 5px;
+}
+
+.burger__line::before, .burger__line::after {
   content: '';
   position: absolute;
-  width: 108%;
-  border-radius: 3px;
-  transform: scaleX(0);
-  height: 7px;
-  left: -5px;
-  bottom: 6%;
-  background-color: #f5c1d0;
-  transform-origin: bottom left;
-  transition: transform 0.25s ease-out;
-  z-index: -1;
+  width: 30px;
+  height: 2px;
+  right: 0;
+  transition: all .2s linear;
 }
 
-span.active::before {
-  background-color: azure;
+.burger__line::before {
+  transform: translateY(-8px);
 }
 
-ul.nav-items li a:hover span::before {
-  transform: scaleX(1);
+.burger__line::after {
+  transform: translateY(8px);
 }
 
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #C48FE7;
-  height: 76px;
-  padding: 10px 20px;
+.burger__line--open {
+  background: transparent;
 }
 
-.social-media li {
-  display: inline-block;
-  font-size: 1.5em;
+.burger__line--open::before {
+  transform: rotate(45deg);
 }
 
-.social-media li:not(:last-child) {
-  margin-right: 7px;
+.burger__line--open::after {
+  transform: rotate(-45deg);
 }
 
-.social-media a {
-  color: white;
-  text-decoration: none;
-}
-
-/*-----------------------------------NAV BAR FINISHED--------------------------------------*/
 @media screen and (min-width: 1000px) {
-  /*1. NAV BAR */
-  nav.navigation > div.nav-burger {
+  .nav > div.burger {
     display: none;
   }
-  div.logo {
-    font-size: 14px;
-    width: 180px;
-    margin-left: 20px;
-  }
-  ul.nav-items {
+  ul.nav__list {
     position: static;
     flex-direction: row;
     justify-content: center;
@@ -240,14 +132,13 @@ footer {
     transform: translateX(0);
     padding: 0;
     width: auto;
-    margin-right: 65px;
+    margin-right: 300px;
     font-size: 1em;
   }
-  ul.nav-items li {
+  ul.nav__list li {
     padding: 0 15px;
   }
-  ul.nav-items li:last-child {
+  ul.nav__list li:last-child {
     padding: 0 0 0 15px;
   }
-  /*-----------------------------NAV BAR FINISHED------------------------------*/
 }
