@@ -258,7 +258,7 @@ $menu-font-family: 'Playfair Display';
  #btnRight {
      position: absolute;
      top: 50%;
-     color: gray;
+     color: #694996;
      font-size: 1em;
  }
 
@@ -272,10 +272,32 @@ $menu-font-family: 'Playfair Display';
 
 #btnLeft:hover,
 #btnRight:hover {
-    opacity: .5;
+    color: #2B1563;
 }
 
+/*Footer*/
+footer {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    background-color: $background-color;
+    height: 76px;
+    padding: 10px 20px;
+}
 
+.social-media li {
+    display: inline-block;
+    font-size: 1.5em;
+}
+
+.social-media li:not(:last-child) {
+    margin-right: 7px;
+}
+
+.social-media a {
+    color: white;
+    text-decoration: none;
+}
 
 @media screen and (min-width: 1000px) {
   .nav > div.burger {
