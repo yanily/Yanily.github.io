@@ -126,12 +126,6 @@
   display: flex;
 }
 
-.particle p {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 #particles-js {
   width: 100%;
   height: 400px;
@@ -145,7 +139,7 @@
 }
 
 /*Perfil*/
-.article__profile {
+.articleprofile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,7 +150,7 @@
   background-color: #F2F2E9;
 }
 
-.article__profile h3 {
+.articleprofile__title {
   font-family: var(--menu-font-family), sans-serif;
   color: #2B1563;
   font-size: 2em;
@@ -164,7 +158,7 @@
   margin-bottom: 10px;
 }
 
-.profile__description {
+.articleprofile__text {
   width: 90%;
   line-height: 1.3em;
   font-size: 1em;
@@ -173,7 +167,7 @@
 }
 
 /*Habilidades*/
-.article__abilities {
+.articleabilities {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -184,7 +178,7 @@
   background-color: #d2c8e0;
 }
 
-.article__abilities h3 {
+.articleabilities__title {
   font-family: var(--menu-font-family), sans-serif;
   color: #2B1563;
   font-size: 2em;
@@ -192,13 +186,14 @@
   margin-bottom: 10px;
 }
 
-.list__abilities {
+.articleabilities__list {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 50px;
+  margin-left: 50px;
 }
 
-.list__abilities li {
+.articleabilities__list__items {
   flex-direction: row;
   align-items: center;
   list-style: none;
@@ -211,7 +206,7 @@
 }
 
 /*Rasgos personales*/
-.article__trait {
+.articletrait {
   position: relative;
   background-color: #F2F2E9;
   padding-top: 15px;
@@ -221,7 +216,7 @@
   align-items: center;
 }
 
-.article__trait h2 {
+.articletrait__title {
   font-family: var(--menu-font-family), sans-serif;
   color: #2B1563;
   font-size: 2em;
@@ -229,7 +224,7 @@
   margin-bottom: 10px;
 }
 
-.trait__container {
+.traitcontainer {
   width: 80%;
   display: flex;
   overflow: hidden;
@@ -257,7 +252,7 @@
   margin-right: 80%;
 }
 
-.trait p {
+.trait__text {
   width: 70%;
   color: #898989;
   margin: 10%;
@@ -265,35 +260,41 @@
   font-size: 2em;
 }
 
-#btnLeft,
-#btnRight {
+.trait__btnLeft, .trait__btnRight {
   position: absolute;
   top: 50%;
   color: #694996;
   font-size: 1em;
 }
 
-#btnLeft {
-  left: 20px;
-}
-
-#btnRight {
-  right: 10px;
-}
-
-#btnLeft:hover,
-#btnRight:hover {
+.trait__btnLeft:hover, .trait__btnRight:hover {
   color: #2B1563;
 }
 
+.trait__btnLeft {
+  left: 20px;
+}
+
+.trait__btnRight {
+  right: 10px;
+}
+
 /*Proyectos*/
-.Projects__container {
+.Projectscontainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   margin: 0;
   background-color: #d2c8e0;
+}
+
+.Projectscontainer__title {
+  font-family: var(--menu-font-family), sans-serif;
+  color: #2B1563;
+  font-size: 2em;
+  margin-top: 70px;
+  margin-bottom: 10px;
 }
 
 .Projects {
@@ -312,15 +313,7 @@
   margin-bottom: 70px;
 }
 
-.Projects__container h3 {
-  font-family: var(--menu-font-family), sans-serif;
-  color: #2B1563;
-  font-size: 2em;
-  margin-top: 70px;
-  margin-bottom: 10px;
-}
-
-.Projects__description {
+.Projects__text {
   font-size: 1em;
   font-family: 'Montserrat', sans-serif;
   width: 80%;
@@ -330,7 +323,7 @@
   justify-content: center;
 }
 
-.Projects__description2 {
+.Projects__text2 {
   font-size: 1em;
   font-family: 'Montserrat', sans-serif;
   width: 80%;
@@ -340,7 +333,7 @@
   justify-content: center;
 }
 
-.Projects a {
+.Projects__link {
   z-index: 1;
   color: #2d170e;
   padding: 5px 5px;
@@ -350,7 +343,7 @@
   text-transform: uppercase;
 }
 
-.Projects a::before {
+.Projects__link::before {
   content: '';
   z-index: -1;
   position: absolute;
@@ -364,13 +357,13 @@
   transition: transform 0.25s ease-in-out;
 }
 
-.Projects a:hover::before {
+.Projects__link:hover::before {
   transform-origin: center bottom;
   transform: scaleY(1);
 }
 
 /*Footer*/
-footer {
+.footer {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -379,16 +372,16 @@ footer {
   padding: 10px 20px;
 }
 
-.social-media li {
+.footer__item {
   display: inline-block;
   font-size: 1.5em;
 }
 
-.social-media li:not(:last-child) {
+.footer__item:not(:last-child) {
   margin-right: 7px;
 }
 
-.social-media a {
+.footer__link {
   color: white;
   text-decoration: none;
 }
@@ -418,52 +411,52 @@ footer {
     font-size: 3em;
   }
   /*Perfil*/
-  .article__profile {
+  .articleprofile {
     padding-top: 30px;
   }
-  .article__profile h3 {
+  .articleprofile__title {
     font-size: 2.5em;
   }
-  .profile__description {
+  .articleprofile__text {
     width: 60%;
     text-align: justify;
     font-size: 1.3em;
   }
   /*Habilidades*/
-  .list__abilities {
+  .articleabilities__title {
+    font-size: 2.5em;
+  }
+  .articleabilities__list {
     width: 40%;
     text-align: justify;
     font-size: 1.1em;
   }
-  .article__abilities h3 {
-    font-size: 2.5em;
-  }
-  .list__abilities li {
+  .articleabilities__list__items {
     margin: 25px 10px 15px 40px;
     padding: 10px 15px;
   }
   /*Rasgos personales*/
-  .article__trait h2 {
+  .articletrait__title {
     font-size: 2.5em;
   }
-  .trait__container {
+  .traitcontainer {
     width: 40%;
     height: 80%;
   }
   .trait {
     font-size: 1em;
   }
-  .trait p {
+  .trait__text {
     margin: 30px 10px 30px 150px;
   }
-  #btnLeft {
+  .trait__btnLeft {
     left: 200px;
   }
-  #btnRight {
+  .trait__btnRight {
     right: 200px;
   }
   /*Proyectos*/
-  .Projects__container {
+  .Projectscontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -471,16 +464,16 @@ footer {
     margin: 0;
     background-color: #d2c8e0;
   }
+  .Projectscontainer__title {
+    font-size: 2.5em;
+  }
   .Projects {
     width: 50%;
   }
-  .Projects__container h3 {
-    font-size: 2.5em;
-  }
-  .Projects__description {
+  .Projects__text {
     font-size: 1.5em;
   }
-  .Projects__description2 {
+  .Projects__text2 {
     font-size: 1.5em;
   }
 }

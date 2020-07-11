@@ -2,7 +2,7 @@ $('.burger').click(function(){
     $('.burger__line').toggleClass("burger__line--open");
     $(".nav__list").toggleClass("nav__list--open");
 });
-var count = $('.trait__container').children().length;
+var count = $('.traitcontainer').children().length;
 const size = 180;
 let counter = 1;
 $('#btnLeft').click(function(){

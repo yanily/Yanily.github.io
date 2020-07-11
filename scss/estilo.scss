@@ -133,27 +133,19 @@ $menu-font-family: 'Playfair Display';
     background: #2B1563;
     display: flex;
   }
-.particle p{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-  }
   #particles-js{
     width: 100%;
     height: 400px;
-
   }
   .name__title{
     background-color: #2B1563;
     font-family: var(--menu-font-family), sans-serif;
     color: #F2F2E9;
     font-size: 2em;
-
   }
 
 /*Perfil*/
-.article__profile{
+.articleprofile{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -162,24 +154,25 @@ $menu-font-family: 'Playfair Display';
   padding-top: 15px;
   text-align: justify;
     background-color: #F2F2E9;
-}
-.article__profile h3{
-  font-family: var(--menu-font-family), sans-serif;
-  color: #2B1563;
-  font-size: 2em;
-  margin-top: 50px;
-  margin-bottom: 10px;
-}
-.profile__description{
-  width: 90%;
-  line-height: 1.3em;
-  font-size: 1em;
-  font-family:'Montserrat', sans-serif;
-  margin-bottom: 70px;
+    &__title{
+      font-family: var(--menu-font-family), sans-serif;
+      color: #2B1563;
+      font-size: 2em;
+      margin-top: 50px;
+      margin-bottom: 10px;
+    }
+    &__text{
+      width: 90%;
+      line-height: 1.3em;
+      font-size: 1em;
+      font-family:'Montserrat', sans-serif;
+      margin-bottom: 70px;
+    }
 }
 
+
 /*Habilidades*/
-.article__abilities{
+.articleabilities{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -188,33 +181,35 @@ $menu-font-family: 'Playfair Display';
   padding-top: 15px;
   text-align: justify;
   background-color: #d2c8e0;
+  &__title{
+    font-family: var(--menu-font-family), sans-serif;
+    color: #2B1563;
+    font-size: 2em;
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    &__items{
+      flex-direction: row;
+      align-items: center;
+      list-style: none;
+      border: 2px solid #2d170e;
+      margin: 25px 10px 15px 15px;
+      padding: 5px 10px;
+      position: relative;
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+  }
 }
-.article__abilities h3{
-  font-family: var(--menu-font-family), sans-serif;
-  color: #2B1563;
-  font-size: 2em;
-  margin-top: 60px;
-  margin-bottom: 10px;
-}
-.list__abilities {
- display: flex;
- flex-wrap: wrap;
- margin-bottom: 50px;
 
-}
-.list__abilities li{
-  flex-direction: row;
-  align-items: center;
-  list-style: none;
-  border: 2px solid #2d170e;
-  margin: 25px 10px 15px 15px;
-  padding: 5px 10px;
-  position: relative;
-  text-transform: uppercase;
-  font-size: 18px;
-}
+
 /*Rasgos personales*/
-.article__trait {
+.articletrait {
     position: relative;
     background-color: #F2F2E9;
     padding-top: 15px;
@@ -222,79 +217,81 @@ $menu-font-family: 'Playfair Display';
     display: flex;
     flex-direction: column;
     align-items: center;
+    &__title{
+      font-family: var(--menu-font-family), sans-serif;
+      color: #2B1563;
+      font-size: 2em;
+      margin-top: 60px;
+      margin-bottom: 10px;
+    }
 }
-.article__trait h2{
-  font-family: var(--menu-font-family), sans-serif;
-  color: #2B1563;
-  font-size: 2em;
-  margin-top: 60px;
-  margin-bottom: 10px;
-}
-
- .trait__container {
+ .traitcontainer {
      width: 80%;
      display: flex;
      overflow: hidden;
-     align-items: center;
- }
+     align-items: center
+  }
 
- .trait {
-     font-family: 'Montserrat', sans-serif;
-     font-size: .8em;
-     width: 100%;
-     flex-shrink: 0;
-     background-color: #fff;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     border-radius: 5px;
-     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-     margin-bottom: 15px;
-     position: relative;
-     transition: all .5s ease-out;
-     margin-bottom: 50px;
- }
+ .trait{
+       font-family: 'Montserrat', sans-serif;
+       font-size: .8em;
+       width: 100%;
+       flex-shrink: 0;
+       background-color: #fff;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       border-radius: 5px;
+       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+       margin-bottom: 15px;
+       position: relative;
+       transition: all .5s ease-out;
+       margin-bottom: 50px;
+       &:not(:last-child){
+         margin-right: 80%;
+       }
+       &__text{
+          width: 70%;
+        color: #898989;
+        margin: 10%;
+        left: 80px;
+        font-size: 2em;
+      }
+      &__btnLeft,
+      &__btnRight{
+        position: absolute;
+        top: 50%;
+        color: #694996;
+        font-size: 1em;
+        &:hover{
+          color: #2B1563;
+        }
+      }
+      &__btnLeft{
+        left: 20px;
+      }
+        &__btnRight{
+        right: 10px;
+        }
+     }
 
- .trait:not(:last-child) {
-     margin-right: 80%;
- }
 
- .trait p {
-     width: 70%;
-     color: #898989;
-     margin: 10%;
-     left: 80px;
-     font-size: 2em;
- }
 
- #btnLeft,
- #btnRight {
-     position: absolute;
-     top: 50%;
-     color: #694996;
-     font-size: 1em;
- }
-
- #btnLeft {
-    left: 20px;
- }
-
-#btnRight {
-    right: 10px;
-}
-
-#btnLeft:hover,
-#btnRight:hover {
-    color: #2B1563;
-}
 /*Proyectos*/
-.Projects__container {
+.Projectscontainer {
      display: flex;
      flex-direction: column;
      align-items: center;
      width: 100%;
      margin: 0;
      background-color: #d2c8e0;
+     &__title{
+       font-family: var(--menu-font-family), sans-serif;
+       color: #2B1563;
+       font-size: 2em;
+       margin-top: 70px;
+       margin-bottom: 10px;
+     }
  }
 
  .Projects {
@@ -311,92 +308,72 @@ $menu-font-family: 'Playfair Display';
      overflow: hidden;
      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
      margin-bottom: 70px;
+     &__text{
+       font-size: 1em;
+       font-family:'Montserrat', sans-serif;
+       width: 80%;
+       line-height: 1.3em;
+       margin-bottom: 50px;
+       margin-top: 50px;
+       justify-content: center;
+     }
+     &__text2{
+       font-size: 1em;
+       font-family:'Montserrat', sans-serif;
+       width: 80%;
+       line-height: 1.3em;
+       margin-bottom: 50px;
+       margin-top: 50px;
+       justify-content: center;
+     }
+     &__link{
+       z-index: 1;
+       color: #2d170e;
+       padding: 5px 5px;
+       border: 2px solid #2d170e;
+       margin: 25px 0 15px 0;
+       position: relative;
+       text-transform: uppercase;
+       &::before{
+         content: '';
+         z-index: -1;
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         background-color: #b1a68e;
+         transform-origin: center top;
+         transform: scaleY(0);
+         transition: transform 0.25s ease-in-out;
+       }
+       &:hover::before {
+          transform-origin: center bottom;
+          transform: scaleY(1);
+       }
+     }
  }
-
- .Projects__container h3 {
-   font-family: var(--menu-font-family), sans-serif;
-   color: #2B1563;
-   font-size: 2em;
-   margin-top: 70px;
-   margin-bottom: 10px;
- }
-
- .Projects__description{
-     font-size: 1em;
-     font-family:'Montserrat', sans-serif;
-     width: 80%;
-     line-height: 1.3em;
-     margin-bottom: 50px;
-     margin-top: 50px;
-     justify-content: center;
-
- }
- .Projects__description2{
-     font-size: 1em;
-     font-family:'Montserrat', sans-serif;
-     width: 80%;
-     line-height: 1.3em;
-     margin-bottom: 50px;
-     margin-top: 50px;
-     justify-content: center;
-
- }
-
- .Projects a {
-     z-index: 1;
-     color: #2d170e;
-     padding: 5px 5px;
-     border: 2px solid #2d170e;
-     margin: 25px 0 15px 0;
-     position: relative;
-     text-transform: uppercase;
- }
-
- .Projects a::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #b1a68e;
-    transform-origin: center top;
-    transform: scaleY(0);
-    transition: transform 0.25s ease-in-out;
- }
- .Projects a:hover::before {
-    transform-origin: center bottom;
-    transform: scaleY(1);
- }
-
 
 /*Footer*/
-footer {
+.footer {
     display: flex;
     align-items: center;
     justify-content:space-around;
     background-color: $background-color;
     height: 76px;
     padding: 10px 20px;
+    &__item{
+      display: inline-block;
+      font-size: 1.5em;
+      &:not(:last-child) {
+          margin-right: 7px;
+      }
+    }
+    &__link{
+      color: white;
+      text-decoration: none;
+    }
 }
-
-.social-media li {
-    display: inline-block;
-    font-size: 1.5em;
-}
-
-.social-media li:not(:last-child) {
-    margin-right: 7px;
-}
-
-.social-media a {
-    color: white;
-    text-decoration: none;
-}
-
-
-
 
 @media screen and (min-width: 1000px) {
   .nav > div.burger {
@@ -426,79 +403,74 @@ footer {
     font-size: 3em;
     }
     /*Perfil*/
-  .article__profile{
+  .articleprofile{
       padding-top: 30px;
-    }
-    .article__profile h3{
-      font-size: 2.5em;
-    }
-
-  .profile__description{
-      width: 60%;
-      text-align: justify;
-      font-size: 1.3em;
+      &__title{
+          font-size: 2.5em;
+      }
+      &__text{
+        width: 60%;
+        text-align: justify;
+        font-size: 1.3em;
+      }
     }
     /*Habilidades*/
-    .list__abilities {
-     width: 40%;
-     text-align: justify;
-     font-size: 1.1em;
-    }
-    .article__abilities h3{
-      font-size: 2.5em;
-    }
-    .list__abilities li{
-      margin: 25px 10px 15px 40px;
-      padding: 10px 15px;
+    .articleabilities{
+      &__title{
+        font-size: 2.5em;
+      }
+      &__list{
+        width: 40%;
+        text-align: justify;
+        font-size: 1.1em;
+        &__items{
+          margin: 25px 10px 15px 40px;
+          padding: 10px 15px;
+        }
+      }
     }
     /*Rasgos personales*/
-    .article__trait h2{
-      font-size: 2.5em;
+    .articletrait{
+      &__title{
+        font-size: 2.5em;
+      }
     }
-     .trait__container {
+     .traitcontainer{
        width: 40%;
        height: 80%;
      }
-
      .trait {
        font-size: 1em;
-     }
-
-     .trait p {
-        margin: 30px 10px 30px 150px;
-     }
-     #btnLeft {
-      left: 200px;
-     }
-
-    #btnRight {
+       &__text{
+           margin: 30px 10px 30px 150px;
+       }
+       &__btnLeft{
+         left: 200px;
+       }
+       &__btnRight{
          right: 200px;
-    }
+       }
+     }
 
     /*Proyectos*/
-    .Projects__container {
+    .Projectscontainer {
          display: flex;
          flex-direction: column;
          align-items: center;
          width: 100%;
          margin: 0;
          background-color: #d2c8e0;
+         &__title{
+           font-size: 2.5em;
+         }
      }
      .Projects {
          width: 50%;
+         &__text{
+           font-size: 1.5em;
+         }
+         &__text2{
+           font-size: 1.5em;
+         }
      }
-
-     .Projects__container h3 {
-       font-size: 2.5em;
-     }
-
-     .Projects__description{
-         font-size: 1.5em;
-     }
-     .Projects__description2{
-         font-size: 1.5em;
-     }
-
-
-
 }
