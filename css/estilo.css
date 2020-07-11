@@ -24,7 +24,6 @@
   animation-name: textoMovimiento;
   animation-timing-function: linear;
 }
-
 @keyframes textoMovimiento {
   from {
     margin-right: 100%;
