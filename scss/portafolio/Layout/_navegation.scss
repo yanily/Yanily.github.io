@@ -1,0 +1,132 @@
+.nav {
+    display: flex;
+    height: 76px;
+    width: 100%;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: $background-color;
+
+    &__list {
+        position: fixed;
+        left: 0;
+        top: 76px;
+        background-color: $background-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: calc(100vh - #{$nav-height});
+        width: 100%;
+        padding-top: 55px;
+        transform: translateX(101%);
+        overflow: hidden;
+        list-style: none;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+        font-size: 1.25em;
+
+        &--open {
+            transform: translateX(0%);
+        }
+    }
+
+    &__item {
+        padding: 15px 0;
+    }
+    &__link {
+        position: relative;
+        display: inline-block;
+        font-size: 2em;
+        font-weight: 800;
+        color: $links-color;
+        overflow: hidden;
+        background: linear-gradient(to right, $hover-color, $hover-color 50%, $links-color 50%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 100%;
+        background-position: 100%;
+        transition: background-position 275ms ease;
+        &:hover {
+          background-position: 0 100%;
+        }
+    }
+}
+
+.burger {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all .3s linear;
+
+    &__line {
+        width: 20px;
+        position: relative;
+        transition: all .1s linear;
+
+        &,
+        &::before,
+        &::after {
+            height: 2px;
+            background: $burger-color;
+            border-radius: 5px;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            right: 0;
+            transition: all .2s linear;
+        }
+
+        &::before {
+            transform: translateY(-8px);
+        }
+
+        &::after {
+            transform: translateY(8px);
+        }
+
+        &--open {
+            background: transparent;
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+@media screen and (min-width: 1000px) {
+  .nav > div.burger {
+          display: none;
+      }
+      ul.nav__list {
+          position: static;
+          flex-direction: row;
+          justify-content: center;
+          height: auto;
+          transform: translateX(0);
+          padding: 0;
+          width: auto;
+          margin-right: 300px;
+          font-size: 1em;
+      }
+
+      ul.nav__list li {
+          padding: 0 15px;
+      }
+
+      ul.nav__list li:last-child {
+          padding: 0 0 0 15px;
+      }
+}
